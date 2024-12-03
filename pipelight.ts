@@ -9,7 +9,7 @@ const my_pipe: Pipeline = {
       name: "Run tests",
       commands: [
         `docker compose -f src/docker-compose.yml up tests --build \
-        && if [ $(docker inspect best-api-tests --format='{{.State.ExitCode}}) -ne 0 ]; then exit 1; fi`
+        && if [ $(docker inspect best-api-tests --format='{{.State.ExitCode}}') -ne 0 ]; then exit 1; fi`
       ],
       on_failure: [{
         name: "Do nothing",
