@@ -11,7 +11,7 @@ const my_pipe: Pipeline = {
     },
     {
       name: "Build new container",
-      commands: [`docker build -f src/Dockerfile -t ${CONTAINER_NAME}`],
+      commands: [`docker build . -f src/Dockerfile -t ${CONTAINER_NAME}`],
     },
     {
       name: "Run tests",
