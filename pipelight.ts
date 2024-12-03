@@ -15,7 +15,7 @@ const my_pipe: Pipeline = {
     },
     {
       name: "Run tests",
-      commands: [`docker run --name ${CONTAINER_NAME} ${CONTAINER_NAME} -d`],
+      commands: [`docker run -d --name ${CONTAINER_NAME} ${CONTAINER_NAME}`],
     }
   ],
   triggers: [{
