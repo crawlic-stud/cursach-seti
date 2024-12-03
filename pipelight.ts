@@ -5,15 +5,11 @@ const my_pipe: Pipeline = {
   steps: [
     {
       name: "Remove old container",
-      commands: [`docker compose down -f src/docker-compose.yml`],
-    },
-    {
-      name: "Build new container",
-      commands: [`docker compose build -f src/docker-compose.yml`],
+      commands: [`docker compose -f src/docker-compose.yml down`],
     },
     {
       name: "Run tests",
-      commands: [`docker compose up -f src/docker-compose.yml tests --build`],
+      commands: [`docker compose -f src/docker-compose.yml up tests --build`],
     }
   ],
   triggers: [{
