@@ -1,0 +1,8 @@
+ Network src_default  Creating
+ Network src_default  Created
+ Container best-api-tests  Creating
+ Container best-api-tests  Created
+best-api-tests  | Usage: uvicorn [OPTIONS] APP
+best-api-tests  | Try 'uvicorn --help' for help.
+best-api-tests  | 
+best-api-tests  | Error: Got unexpected extra argument (pytest)
