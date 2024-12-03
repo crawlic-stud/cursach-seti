@@ -2,7 +2,10 @@ import type { Pipeline, Config } from "pipelight";
 
 const CONTAINER_NAME = "best-api-tests";
 
-const my_pipe: Pipeline = {
+// docs:
+// https://pipelight.dev/introduction/description.html
+
+const pre_commit: Pipeline = {
   name: "pre-commit-job",
   steps: [
     {
@@ -25,8 +28,26 @@ const my_pipe: Pipeline = {
 };
 
 
+const on_change: Pipeline = {
+  name: "on-change-job",
+  steps: [
+    {
+      name: "Run linter",
+      commands: ["black ."],
+      on_failure: [{
+        name: "Do nothing",
+        commands: ["echo FAILURE"]
+      }],
+      on_success: [{name: "Success!", commands: ["echo SUCCESS"]}],
+    }
+  ],
+  triggers: [{
+    actions: ["watch"],
+  }]
+}
+
 const config: Config = {
-  pipelines: [my_pipe],
+  pipelines: [pre_commit, on_change],
 };
 
 export default config;
