@@ -1,0 +1,45 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 228B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim
+#2 DONE 0.6s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 12.87MB 0.6s done
+#4 DONE 0.7s
+
+#5 [1/5] FROM docker.io/library/python:3.12-slim@sha256:60d9996b6a8a3689d36db740b49f4327be3be09a21122bd02fb8895abb38b50d
+#5 resolve docker.io/library/python:3.12-slim@sha256:60d9996b6a8a3689d36db740b49f4327be3be09a21122bd02fb8895abb38b50d 0.1s done
+#5 sha256:5e739003c33414360cf2cec9452e1935b1bfcae79f279c33009bf4c0d5596f52 3.32MB / 3.32MB 0.6s done
+#5 sha256:5f86e0092844f78afa84a3b63059ea82e82fa93a28eedde55386370d924e8cf3 0B / 13.63MB 0.7s
+#5 sha256:46271edb89aec00565d974118707aaded82928c7ea7cb0a2bcc94b1f17e17e3d 249B / 249B 0.6s done
+#5 sha256:60d9996b6a8a3689d36db740b49f4327be3be09a21122bd02fb8895abb38b50d 9.12kB / 9.12kB done
+#5 sha256:1c44018d7eb40488f29e7c6ad4991d3200507e14dca71b94fe61011815e98155 1.75kB / 1.75kB done
+#5 sha256:e35f80b558775b0903c34523ef3422645c10e06a66b151f228acf9cf8b862f66 5.17kB / 5.17kB done
+#5 extracting sha256:5e739003c33414360cf2cec9452e1935b1bfcae79f279c33009bf4c0d5596f52
+#5 CANCELED
+
+#6 [2/5] WORKDIR /app
+#6 CACHED
+
+#7 [3/5] COPY requirements.txt requirements.txt
+#7 ERROR: failed to calculate checksum of ref effa87ef-3430-42a0-82e7-34054fbe6b07::1ucrw9sqsxq99qv2ye6a2gmai: "/requirements.txt": not found
+------
+ > [3/5] COPY requirements.txt requirements.txt:
+------
+Dockerfile:5
+--------------------
+   3 |     WORKDIR /app
+   4 |     
+   5 | >>> COPY requirements.txt requirements.txt
+   6 |     RUN pip install -r requirements.txt
+   7 |     
+--------------------
+ERROR: failed to solve: failed to compute cache key: failed to calculate checksum of ref effa87ef-3430-42a0-82e7-34054fbe6b07::1ucrw9sqsxq99qv2ye6a2gmai: "/requirements.txt": not found
