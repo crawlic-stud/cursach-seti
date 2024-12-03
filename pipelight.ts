@@ -15,7 +15,7 @@ const my_pipe: Pipeline = {
     },
     {
       name: "Run tests",
-      commands: [`docker run --entrypoint "python -m pytest" ${CONTAINER_NAME}`],
+      commands: [`docker run --entrypoint "python3 -m pytest" ${CONTAINER_NAME}`],
     }
   ],
   triggers: [{
