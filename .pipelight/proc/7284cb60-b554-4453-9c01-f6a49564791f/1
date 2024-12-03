@@ -1,0 +1,37 @@
+#0 building with "default" instance using docker driver
+
+#1 [tests internal] load build definition from Dockerfile
+#1 transferring dockerfile: 241B done
+#1 DONE 0.0s
+
+#2 [tests internal] load metadata for docker.io/library/python:3.12-slim
+#2 DONE 1.0s
+
+#3 [tests internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [tests 1/5] FROM docker.io/library/python:3.12-slim@sha256:60d9996b6a8a3689d36db740b49f4327be3be09a21122bd02fb8895abb38b50d
+#4 DONE 0.0s
+
+#5 [tests internal] load build context
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [tests 2/5] WORKDIR /app
+#6 CACHED
+
+#7 [tests 3/5] COPY src/requirements.txt requirements.txt
+#7 ERROR: failed to calculate checksum of ref effa87ef-3430-42a0-82e7-34054fbe6b07::8hk6bgq1jw0xj4jfbfb00dq3h: "/src/requirements.txt": not found
+
+#8 [tests 4/5] RUN pip install -r requirements.txt
+#8 CACHED
+
+#9 [tests 5/5] COPY src .
+#9 ERROR: failed to calculate checksum of ref effa87ef-3430-42a0-82e7-34054fbe6b07::8hk6bgq1jw0xj4jfbfb00dq3h: "/src": not found
+------
+ > [tests 3/5] COPY src/requirements.txt requirements.txt:
+------
+------
+ > [tests 5/5] COPY src .:
+------
