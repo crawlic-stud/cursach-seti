@@ -1,0 +1,19 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.7, pytest-8.3.4, pluggy-1.5.0
+rootdir: /app
+plugins: anyio-4.6.2.post1
+collected 2 items
+
+tests/test_api.py .F                                                     [100%]
+
+=================================== FAILURES ===================================
+__________________________________ test_false __________________________________
+
+    def test_false():
+>       assert False
+E       assert False
+
+tests/test_api.py:6: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_api.py::test_false - assert False
+========================= 1 failed, 1 passed in 0.04s ==========================

@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    container_name: best-api
+  tests:
+    build: .
+    volumes:
+      - .:/app
+    command: pytest
+    container_name: best-api-tests

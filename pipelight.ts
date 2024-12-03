@@ -1,21 +1,19 @@
 import type { Pipeline, Config } from "pipelight";
 
-const CONTAINER_NAME = "best-api";
-
 const my_pipe: Pipeline = {
   name: "pre-commit-job",
   steps: [
     {
       name: "Remove old container",
-      commands: [`docker rm -f ${CONTAINER_NAME}`],
+      commands: [`docker compose down -f src/docker-compose.yml`],
     },
     {
       name: "Build new container",
-      commands: [`docker build . -f src/Dockerfile -t ${CONTAINER_NAME}`],
+      commands: [`docker compose build -f src/docker-compose.yml`],
     },
     {
       name: "Run tests",
-      commands: [`docker run --name ${CONTAINER_NAME} ${CONTAINER_NAME}`],
+      commands: [`docker compose up -f src/docker-compose.yml tests --build`],
     }
   ],
   triggers: [{
