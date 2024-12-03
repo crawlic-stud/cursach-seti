@@ -6,6 +6,11 @@ const my_pipe: Pipeline = {
     {
       name: "Run tests",
       commands: [`docker compose -f src/docker-compose.yml up tests --build`],
+      on_failure: [{
+        name: "Do nothing",
+        commands: ["echo FAILURE"]
+      }],
+      on_success: [{name: "Success!", commands: ["echo SUCCESS"]}],
     }
   ],
   triggers: [{
