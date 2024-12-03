@@ -10,5 +10,5 @@ services:
     build: .
     volumes:
       - .:/app
-    entrypoint: pytest
+    entrypoint: pytest 
     container_name: best-api-tests
