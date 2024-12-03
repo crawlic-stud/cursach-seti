@@ -6,5 +6,6 @@ COPY src/requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
 COPY src .
+RUN ls
 
 ENTRYPOINT ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
