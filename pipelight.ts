@@ -5,7 +5,7 @@ const my_pipe: Pipeline = {
   steps: [
     {
       name: "Run tests",
-      commands: [`docker compose -f src/docker-compose.yml up tests --build`],
+      commands: [`docker compose -f src/docker-compose.yml up tests --build && if [ $? -ne 0 ]; then exit 1; fi`],
       on_failure: [{
         name: "Do nothing",
         commands: ["echo FAILURE"]
