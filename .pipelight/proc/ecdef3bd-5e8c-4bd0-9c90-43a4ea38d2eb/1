@@ -1,0 +1,61 @@
+#0 building with "default" instance using docker driver
+
+#1 [tests internal] load build definition from Dockerfile
+#1 transferring dockerfile: 237B done
+#1 DONE 0.0s
+
+#2 [tests internal] load metadata for docker.io/library/python:3.12-slim
+#2 DONE 0.6s
+
+#3 [tests internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [tests 1/5] FROM docker.io/library/python:3.12-slim@sha256:60d9996b6a8a3689d36db740b49f4327be3be09a21122bd02fb8895abb38b50d
+#4 DONE 0.0s
+
+#5 [tests internal] load build context
+#5 transferring context: 870B done
+#5 DONE 0.0s
+
+#6 [tests 4/5] RUN pip install -r requirements.txt
+#6 CACHED
+
+#7 [tests 2/5] WORKDIR /app
+#7 CACHED
+
+#8 [tests 3/5] COPY ./requirements.txt requirements.txt
+#8 CACHED
+
+#9 [tests 5/5] COPY . .
+#9 CACHED
+
+#10 [tests] exporting to image
+#10 exporting layers done
+#10 writing image sha256:993eeb66eb481b0069c03cbfb17240224f588c5db65ca8d4fcd57f1c2a9d219f done
+#10 naming to docker.io/library/src-tests done
+#10 DONE 0.0s
+
+#11 [tests] resolving provenance for metadata file
+#11 DONE 0.0s
+Attaching to best-api-tests
+best-api-tests  | ============================= test session starts ==============================
+best-api-tests  | platform linux -- Python 3.12.7, pytest-8.3.4, pluggy-1.5.0
+best-api-tests  | rootdir: /app
+best-api-tests  | plugins: anyio-4.6.2.post1
+best-api-tests  | collected 2 items
+best-api-tests  | 
+best-api-tests  | tests/test_api.py .F                                                     [100%]
+best-api-tests  | 
+best-api-tests  | =================================== FAILURES ===================================
+best-api-tests  | __________________________________ test_false __________________________________
+best-api-tests  | 
+best-api-tests  |     def test_false():
+best-api-tests  | >       assert False
+best-api-tests  | E       assert False
+best-api-tests  | 
+best-api-tests  | tests/test_api.py:6: AssertionError
+best-api-tests  | =========================== short test summary info ============================
+best-api-tests  | FAILED tests/test_api.py::test_false - assert False
+best-api-tests  | ========================= 1 failed, 1 passed in 0.03s ==========================
+[Kbest-api-tests exited with code 1
