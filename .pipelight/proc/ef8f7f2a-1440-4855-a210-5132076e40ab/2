@@ -1,0 +1,45 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 196B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim
+#2 DONE 0.7s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/6] FROM docker.io/library/python:3.12-slim@sha256:60d9996b6a8a3689d36db740b49f4327be3be09a21122bd02fb8895abb38b50d
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 405B done
+#5 DONE 0.0s
+
+#6 [2/6] WORKDIR /app
+#6 CACHED
+
+#7 [3/6] COPY src/requirements.txt requirements.txt
+#7 CACHED
+
+#8 [4/6] RUN pip install -r requirements.txt
+#8 CACHED
+
+#9 [5/6] COPY src .
+#9 DONE 0.1s
+
+#10 [6/6] RUN ls
+#10 0.467 Dockerfile
+#10 0.467 docker-compose.yml
+#10 0.467 main.py
+#10 0.467 requirements.txt
+#10 0.467 tests
+#10 DONE 0.5s
+
+#11 exporting to image
+#11 exporting layers 0.1s done
+#11 writing image sha256:72b62a09ad42ee54cb3288bea9c8966e9c16b063bbf44f105f5cd6e3edcc5e61 done
+#11 naming to docker.io/library/best-api 0.0s done
+#11 DONE 0.1s
