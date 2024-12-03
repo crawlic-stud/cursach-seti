@@ -1,11 +1,13 @@
 import type { Pipeline, Config } from "pipelight";
 
+const CONTAINER_NAME = "best-api-tests";
+
 const my_pipe: Pipeline = {
   name: "pre-commit-job",
   steps: [
     {
       name: "Run tests",
-      commands: [`docker compose -f src/docker-compose.yml up tests --build && echo $? && if [ $? -ne 0 ]; then exit 1; fi`],
+      commands: [`docker compose -f src/docker-compose.yml up tests --build && docker inspect best-api-tests --format='{{.State.ExitCode}}' && if [ $? -ne 0 ]; then exit 1; fi`],
       on_failure: [{
         name: "Do nothing",
         commands: ["echo FAILURE"]
